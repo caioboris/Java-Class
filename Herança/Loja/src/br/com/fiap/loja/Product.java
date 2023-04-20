@@ -6,13 +6,37 @@ public class Product {
     public double price;
     public int quantity;
 
-    public Product(String name, double price){
+    public Product(String name, double price) {
         this.name = name;
         this.price = price;
     }
 
-    public void getProductType(){
-        System.out.println(this.getClass().getSimpleName());
+    public String getProductType() {
+        return this.getClass().getSimpleName();
+    }
+
+    public String getInfo() {
+        String dados =  String.format("[%s] %s (%d): %.2f - ",
+                getProductType(),
+                name,
+                quantity,
+                price);
+        if(isLowOfStock()) dados = "{ !!LOW OF STOCK!! }" + dados;
+
+        return dados;        
+    };
+
+    public double getMinPrice(){
+        return price;
+    }
+
+    public boolean isLowOfStock(){
+        return quantity < 5;
+    }
+
+    @Override
+    public String toString(){
+        return getInfo();
     }
 
     public String getName() {

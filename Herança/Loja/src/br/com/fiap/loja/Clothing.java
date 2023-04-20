@@ -27,7 +27,15 @@ public class Clothing extends Product{
         this.size = size;
     }
 
-    public void getInfo(){
-        System.out.println("Product info\n [Name]: "+ this.name + " [Price]: " + this.price + " [Color]: "+ this.color + " [Size]: " + this.size );
+    @Override
+    public String getInfo(){
+        return super.getInfo() + color + size;
+    }
+
+    @Override
+    public double getMinPrice(){
+        if(isLowOfStock())
+            return super.getMinPrice() * 0.7;
+        return super.getMinPrice();
     }
 }
