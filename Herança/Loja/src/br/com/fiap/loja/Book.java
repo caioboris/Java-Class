@@ -9,15 +9,22 @@ public class Book extends Product{
         this.author = author;
     }
 
+    @Override
+    public String getInfo(){
+        return super.getInfo() + author;
+    }
+
+    @Override
+    public double getMinPrice(){
+        return super.getMinPrice() * 0.8;
+    }
+
     public String getAuthor() {
         return author;
     }
 
     public void setAuthor(String author) {
-        author = author;
+        this.author = author;
     }
 
-    public void getInfo(){
-        System.out.println("Product info\n [Name]: "+ this.name + " [Price]: " + this.price + " [Author]: "+ this.author );
-    }
 }

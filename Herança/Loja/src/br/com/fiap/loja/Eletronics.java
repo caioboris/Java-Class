@@ -27,7 +27,15 @@ public class Eletronics extends Product {
         this.brand = brand;
     }
 
-    public void getInfo(){
-        System.out.println("Product info\n [Name]: "+ this.name + " [Price]: " + this.price + " [Model]: "+ this.model + "[Brand]: "+ this.brand);
+    @Override
+    public String getInfo(){
+        return super.getInfo() + brand + model;
+    }
+
+    @Override
+    public double getMinPrice(){
+        if(!brand.equalsIgnoreCase("Apple")) 
+            return super.getMinPrice() * 0.9;
+        return super.getMinPrice();
     }
 }
