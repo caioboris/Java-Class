@@ -1,6 +1,6 @@
-package br.com.fiap;
+package br.com.fiap.beans;
 
-public class Jogador {
+public abstract class Jogador extends Elemento {
     
     private String nome;
     private int xp;
