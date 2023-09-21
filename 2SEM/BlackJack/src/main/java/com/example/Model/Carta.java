@@ -1,11 +1,10 @@
-package com.example.Model;
-
-import com.example.Naipe;
+package com.example.model;
 
 public class Carta {
 
     private int numero;
     private Naipe naipe;
+    private String figura;
 
     public Carta(int numero,Naipe naipe) {
         this.numero = numero;
@@ -13,7 +12,13 @@ public class Carta {
     }
 
     public String imagePath(){
-       return "classic-cards/"+ numero + naipe +".png" ;
+        var nomeCarta = String.valueOf(numero);
+
+        if(figura!= null){
+            nomeCarta = figura;
+        }
+
+       return "classic-cards/"+ nomeCarta + naipe +".png" ;
     }
 
     public int getNumero() {
@@ -24,5 +29,8 @@ public class Carta {
         return naipe;
     }
     
+    public void setFigura(String figura){
+        this.figura = figura;
+    }
         
 }

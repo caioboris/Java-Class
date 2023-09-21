@@ -1,10 +1,8 @@
-package com.example.Model;
+package com.example.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import com.example.Naipe;
 
 public class Monte {
     
@@ -33,9 +31,30 @@ public class Monte {
                         naipe = Naipe.Spades;
                 }
                 
-                if(numero > 10) numero = 10;
+                if(numero == 11){
+                    var carta = new Carta(10,naipe);
+                    carta.setFigura("Jack");
+                    cartas.add(carta);
+                }
+                else if(numero == 12){
+                    var carta = new Carta(10,naipe);
+                    carta.setFigura("Queen");
+                    cartas.add(carta);
+                }
+                else if(numero == 13){
+                    var carta = new Carta(10,naipe);
+                    carta.setFigura("King");
+                    cartas.add(carta);
+                }
+                else if(numero == 1){
+                    var carta = new Carta(1,naipe);
+                    carta.setFigura("Ace");
+                    cartas.add(carta);
+                }else{
 
-                cartas.add(new Carta(numero, naipe));
+                    cartas.add(new Carta(numero, naipe));
+                }
+
             }            
         }
 

@@ -1,13 +1,15 @@
-package com.example.Model;
+package com.example.model;
 
 public class Computador extends Jogador {
 
     @Override
     public boolean parou() {
        
-        if(getPontos() > 16) parar();
+        var pontos = getPontos();
+        if(pontos > 16)
+            return true;
 
-        return parou();
+        return false;
     }    
    
 }

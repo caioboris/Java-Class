@@ -1,13 +1,15 @@
-package com.example.Model;
+package com.example.model;
 
 public class Jogo {
     
+    static int id;
     private Monte monte = new Monte();
     private Jogador jogador = new Jogador();
     private Computador computador = new Computador();
 
     public Jogo() {
         monte.embaralhar();
+        id++;
     }
 
     public Carta distribuiCartaParaJogador(Jogador jogador){
@@ -49,6 +51,10 @@ public class Jogo {
 
     public Jogador getJogador(){
         return jogador;
+    }
+
+    public int getId(){
+        return id;
     }
 
 
